@@ -43,6 +43,9 @@ class UuidV6 extends Uuid implements TimeBasedUidInterface
         return substr($this->uid, 24);
     }
 
+    /**
+     * @return non-empty-string
+     */
     public static function generate(\DateTimeInterface $time = null, Uuid $node = null): string
     {
         $uuidV1 = UuidV1::generate($time, $node);

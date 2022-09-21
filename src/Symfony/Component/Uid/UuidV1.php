@@ -41,6 +41,9 @@ class UuidV1 extends Uuid implements TimeBasedUidInterface
         return uuid_mac($this->uid);
     }
 
+    /**
+     * @return non-empty-string
+     */
     public static function generate(\DateTimeInterface $time = null, Uuid $node = null): string
     {
         $uuid = !$time || !$node ? uuid_create(static::TYPE) : parent::NIL;

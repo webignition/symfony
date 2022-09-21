@@ -49,6 +49,9 @@ class UuidV7 extends Uuid implements TimeBasedUidInterface
         return \DateTimeImmutable::createFromFormat('U.v', substr_replace($time, '.', -3, 0));
     }
 
+    /**
+     * @return non-empty-string
+     */
     public static function generate(\DateTimeInterface $time = null): string
     {
         if (null === $mtime = $time) {
